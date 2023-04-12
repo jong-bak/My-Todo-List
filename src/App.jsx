@@ -36,7 +36,6 @@ function App() {
   }
 
   const getTodoAnalysis = useMemo(() => {
-    console.log("분석 시작");
     const goodCount = data.filter((it) => it.emotion >= 3).length;
     const badCount = data.length - goodCount;
     const goodRatio = (goodCount / data.length) * 100;
