@@ -33,6 +33,13 @@ const TodoEditor = ({onCreate})=>{
       emotion:1,
     })
   }
+  const renderOptions = () => {
+    const options = [];
+    for (let i = 1; i <= 10; i++) {
+      options.push(<option key={i} value={i}>{i}</option>);
+    }
+    return options;
+  }
   return (
   <EditorWrappered>
   <div className='TodoEditor'>
@@ -59,16 +66,7 @@ const TodoEditor = ({onCreate})=>{
     name='emotion'
     value={state.emotion}
     onChange={handleChangeState}>
-      <option value={1}>1</option>
-      <option value={2}>2</option>
-      <option value={3}>3</option>
-      <option value={4}>4</option>
-      <option value={5}>5</option>
-      <option value={6}>6</option>
-      <option value={7}>7</option>
-      <option value={8}>8</option>
-      <option value={9}>9</option>
-      <option value={10}>10</option>      
+      {renderOptions()}
     </select>
   </div>
   <div>
